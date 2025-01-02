@@ -51,5 +51,21 @@ namespace RouteExam02
                 return TimeSpan.FromHours(input);
             }
         }
+
+        public static string ReadTrueFalseAnswer(string prompt)
+        {
+            string answer;
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                answer = Console.ReadLine().ToLower();
+                if (answer == "true" || answer == "false")
+                {
+                    break;
+                }
+                Console.WriteLine("Please enter 'True' or 'False' only.");
+            }
+            return answer;
+        }
     }
 }

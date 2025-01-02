@@ -12,7 +12,7 @@
 
         public override bool IsCorrect(string answer)
         {
-            return answer == CorrectAnswer.AnswerText;
+            return answer.ToLower() == CorrectAnswer.AnswerText.ToLower();
         }
     }
 }

@@ -67,5 +67,26 @@ namespace RouteExam02
             }
             return answer;
         }
+
+        public static Answer[] ReadMCQAnswers(string prompt, int minAnswers = 2)
+        {
+            Console.WriteLine(prompt);
+            int numberOfAnswers = ReadInt($"Enter number of answers (minimum {minAnswers} answers):");
+
+            while (numberOfAnswers < minAnswers)
+            {
+                Console.WriteLine($"You must enter at least {minAnswers} answers.");
+                numberOfAnswers = ReadInt($"Enter number of answers (minimum {minAnswers} answers):");
+            }
+
+            Answer[] answers = new Answer[numberOfAnswers];
+            for (int i = 0; i < numberOfAnswers; i++)
+            {
+                string answerText = ReadString($"Enter answer {i + 1}:");
+                answers[i] = new Answer(i + 1, answerText);
+            }
+
+            return answers;
+        }
     }
 }

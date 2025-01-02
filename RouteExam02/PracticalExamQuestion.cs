@@ -11,7 +11,7 @@
         // retrun true if the answer is correct
         public override bool IsCorrect(string answer)
         {
-            return answer == CorrectAnswer.AnswerText ;
+            return answer.ToLower() == CorrectAnswer.AnswerText.ToLower() ;
         }
     }
 }

@@ -21,7 +21,7 @@
         public void ShowExam()
         {
             Console.WriteLine($"Exam for Subject: {SubjectName}");
-            Exam.StartExam();
+            Exam.ShowExam();
         }
     }
 }

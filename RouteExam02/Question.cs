@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace RouteExam02
+﻿namespace RouteExam02
 {
     public abstract class Question : ICloneable, IComparable
     {
@@ -32,7 +30,7 @@ namespace RouteExam02
             Question? otherQuestion = obj as Question;
 
             return otherQuestion != null ? 
-                Mark.CompareTo(otherQuestion.Mark) : 0;
+                Mark.CompareTo(otherQuestion.Mark) : 0;  // compare the marks of the questions
         }
 
         public abstract bool IsCorrect(string answer);

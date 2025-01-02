@@ -2,7 +2,7 @@
 {
     public abstract class Exam
     {
-        protected Exam(DateTime examTime, int numberOfQuestions, Question[] questions)
+        public Exam(DateTime examTime, int numberOfQuestions, Question[] questions)
         {
             ExamTime = examTime;
             NumberOfQuestions = numberOfQuestions;

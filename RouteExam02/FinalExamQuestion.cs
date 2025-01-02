@@ -2,8 +2,8 @@
 {
     public class FinalExamQuestion : Question
     {
-        public FinalExamQuestion(QuestionType type, string header, string body, int mark,
-            Answer[] answers, Answer correctAnswer) : base(header, body, mark, answers, correctAnswer)
+        public FinalExamQuestion(string header, string body, int mark,
+            Answer[] answers, Answer correctAnswer, QuestionType type) : base(header, body, mark, answers, correctAnswer)
         {
             Type = type;
         }

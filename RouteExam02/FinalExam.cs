@@ -2,7 +2,7 @@
 {
     public class FinalExam : Exam
     {
-        public FinalExam(DateTime examTime, int numberOfQuestions, Question[] questions)
+        public FinalExam(TimeSpan examTime, int numberOfQuestions, Question[] questions)
             : base(examTime, numberOfQuestions, questions)
         {
 
@@ -10,12 +10,16 @@
 
         public override void StartExam()
         {
+            Console.WriteLine("Final Exam:");
             foreach (var question in Questions)
             {
-                Console.WriteLine(question);
+                Console.WriteLine($"Q: {question.Header}");
+                Console.WriteLine(question.Body);
+                foreach (var answer in question.Answers)
+                {
+                    Console.WriteLine($"- {answer.AnswerText}");
+                }
             }
-            // using linq and lambda expression to calculate the total mark
-            Console.WriteLine("\nGrade: " + Questions.Sum(q => q.Mark));
         }
     }
 }

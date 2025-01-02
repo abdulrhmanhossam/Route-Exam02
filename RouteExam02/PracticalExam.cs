@@ -2,7 +2,7 @@
 {
     public class PracticalExam : Exam
     {
-        public PracticalExam(DateTime examTime, int numberOfQuestions, Question[] questions)
+        public PracticalExam(TimeSpan examTime, int numberOfQuestions, Question[] questions)
             : base(examTime, numberOfQuestions, questions)
         {
 
@@ -10,12 +10,16 @@
 
         public override void StartExam()
         {
+            Console.WriteLine("Practical Exam:");
             foreach (var question in Questions)
             {
-                Console.WriteLine(question);
+                Console.WriteLine($"Q: {question.Header}");
+                Console.WriteLine(question.Body);
+                foreach (var answer in question.Answers)
+                {
+                    Console.WriteLine($"- {answer.AnswerText}");
+                }
             }
-            
-            Console.WriteLine("\nThe right answers are shown after the exam.");
         }
     }
 }

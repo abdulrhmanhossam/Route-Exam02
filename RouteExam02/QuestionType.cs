@@ -2,8 +2,8 @@
 {
     public enum QuestionType
     {
-        TrueFalse,
-        MCQ
+        TrueFalse = 1,
+        MCQ = 2
     }
 }
 

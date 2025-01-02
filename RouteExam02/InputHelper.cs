@@ -34,5 +34,22 @@ namespace RouteExam02
                 Console.WriteLine("Input cannot be empty.");
             }
         }
+
+        // this method will read a DateTime from the console
+        public static TimeSpan ReadTimeSpan(string prompt)
+        {
+            Console.WriteLine(prompt);
+            int input = int.Parse(Console.ReadLine());
+
+
+            if (input < 60)
+            {
+                return TimeSpan.FromMinutes(input);
+            }
+            else
+            {
+                return TimeSpan.FromHours(input);
+            }
+        }
     }
 }
